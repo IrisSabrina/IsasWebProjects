@@ -1,19 +1,24 @@
 $(() => {
-   $('form').on('submit', (event) => {
-     event.preventDefault();
-     const userInput = $('input[type="text"]');
+   // $('form').on('submit', (event) => {
+   //   event.preventDefault();
+   //   const userInput = $('input[type="text"]');
 
    $.ajax({
-      url: 'http://www.recipepuppy.com/api/' + userInput,
+      url: 'http://www.recipepuppy.com/api/', //+ userInput,
       dataType: "jsonp",
-      jsonpCallback: "logResults"
+      jsonpCallback: "logResults",
+      // success: (data) => {
+        // console.log(data);
+      // }
     }
-    ).then(
+    )
+    .then(
       (data) => {
         $('#title').html(data.title)
-        $('#href').html(data.href)
-        $('#ingredients').html(data.ingredients)
-        $('#thumbnail').html(data.thumbnail)
+        for (let i = 0; i < data.length; i++){
+          $('#title').append(data[i].href);
+          console.log(data);
+        }
       },
       () => {
         console.log('bad request');
