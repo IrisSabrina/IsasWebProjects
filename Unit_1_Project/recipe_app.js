@@ -1,10 +1,10 @@
 $(() => {
-   // $('form').on('submit', (event) => {
-   //   event.preventDefault();
-   //   const userInput = $('input[type="text"]');
+   $('form').on('submit', (event) => {
+     event.preventDefault();
+     const userInput = $('input[type="text"]').val();
 
    $.ajax({
-      url: 'http://www.recipepuppy.com/api/', //+ userInput,
+      url: 'http://www.recipepuppy.com/api/?i=' + userInput,
       dataType: "jsonp",
       jsonpCallback: "logResults",
       // success: (data) => {
@@ -14,11 +14,18 @@ $(() => {
     )
     .then(
       (data) => {
-        $('#title').html(data.title)
-        for (let i = 0; i < data.length; i++){
-          $('#title').append(data[i].href);
-          console.log(data);
+
+        for (let i = 0; i < data.results.length; i++){
+          // $('#title').html(data.title)
+          // $('#title').append(data[i].href);
+          const $results = $('<dt>').text('title');
+          const $recipeTitle = $('<dd>').text(data.results[i].title);
+          $('#results').append($results).append($recipeTitle);
+          console.log(data.results[i].title);
+          console.log(data.results[i].href);
+          console.log(data.results[i].thumbnail);
         }
+        // console.log(data.results);
       },
       () => {
         console.log('bad request');
@@ -26,6 +33,7 @@ $(() => {
     );
   });
 });
+
 
 // Form for ingredient entry and submit button needed
 // When ingredients are entered a modal should pop up with the recipes
