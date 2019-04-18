@@ -10,10 +10,10 @@ $(() => {
     }
     ).then(
       (data) => {
-        // $('#title').html(data.Title)
-        // $('#href').html(data.Href)
-        // $('#ingredients').html(data.Ingredients)
-        // $('#thumbnail').html(data.Thumbnail)
+        $('#title').html(data.title)
+        $('#href').html(data.href)
+        $('#ingredients').html(data.ingredients)
+        $('#thumbnail').html(data.thumbnail)
       },
       () => {
         console.log('bad request');
