@@ -4,12 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+
+    <link rel="stylesheet" href="recipe_style.css">
+
   <title>Recipe On The Spot</title>
+
+  <!-- SCRIPTS -->
   <script src="https://code.jquery.com/jquery-3.4.0.min.js" charset="utf-8"></script>
-  <script src="recipe_style.css"></script>
   <script src="recipe_app.js"></script>
 </head>
 <body>
+
   <h1>Need a Recipe?</h1>
     <!-- Form with ingredient search input -->
     <form>
@@ -21,8 +30,29 @@
       </br>
 
     </form>
-    <dl id="results">
-    </dl>
+
+    <div class="container">
+      <!--  CAROUSEL TITLE  -->
+      <h1>TRY ONE OF THESE!</h1>
+      <!--  CAROUSEL CONTAINER  -->
+      <div class="carousel-container">
+        <!-- previous button -->
+        <div class="carousel-button previous">
+
+          <!-- from linearicons icon font -->
+          <span class="lnr lnr-chevron-left"></span>
+        </div>
+
+        <div id="results"></div>
+
+        <!-- next button -->
+        <div class="carousel-button next">
+
+          <!-- from linearicons icon font -->
+          <span class="lnr lnr-chevron-right"></span>
+        </div>
+      </div>
+    </div>
 
     <!-- Attribution -->
     <br/>Powered by <a href="http://www.recipepuppy.com" style="font-size:10px;">Recipe Puppy</a>
