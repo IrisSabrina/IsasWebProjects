@@ -1,83 +1,68 @@
 $(() => {
-
-  // EVENT LISTENERS
-
-  // form button
+  // FORM BUTTON EVENT LISTENER
   $('form').on('submit', (event) => {
     event.preventDefault();
     const userInput = $('input[type="text"]').val();
 
-   $.ajax({
-      url: 'http://www.recipepuppy.com/api/?i=' + userInput,
-      dataType: "jsonp",
-      jsonpCallback: "logResults",
-      // success: (data) => {
-        // console.log(data);
-      // }
+  // API CALL
+  $.ajax({
+    url: 'http://www.recipepuppy.com/api/?i=' + userInput,
+    dataType: "jsonp",
+    jsonpCallback: "logResults",
+    // success: (data) => {
+    // console.log(data);
+    // }
     }
     )
+    // DATA RETURN
     .then(
       (data) => {
         $('.container').show();
         for (let i = 0; i < data.results.length; i++){
-          // $('#title').html(data.title)
-          // $('#title').append(data[i].href);
-          // const $results = $('<dt>').text('title');
-          // const $recipeTitle = $('<dd>').text(data.results[i].title);
-          //
-          // const $address = $('<dt>').text('href');
-          // const $webAddress = $('<dd>').text(data.results[i].href);
-          //
-          // const $image = $('<dt>').text('thumbnail');
-          // const $thumbnail = $('<dd>').text(data.results[i].thumbnail);
-
           const $recipe = $('<div>');
           const $image = $('<img>').attr('src', data.results[i].thumbnail);
           const $link = $('<a>').attr('href', data.results[i].href);
           const $title = $('<h2>').text(data.results[i].title).appendTo($link);
           $recipe.append($image).append($link).appendTo('#results');
 
-
-
-          // $('#results').append($results).append($recipeTitle).append($address).append($webAddress).append($image).append($thumbnail);
-
-          console.log(data.results[i].title);
-          console.log(data.results[i].href);
-          console.log(data.results[i].thumbnail);
+          // console.log(data.results[i].title);
+          // console.log(data.results[i].href);
+          // console.log(data.results[i].thumbnail);
         }
         // console.log(data.results);
-        // VARIABLES
+
+        // DATA RETURN VARIABLES
         let currentResultIndex = 0;
         let numOfResults = $('#results').children().length - 1;
         let $currentResult = $('#results').children();
 
-        // next button
+        // NEXT BUTTON
         $('.next').on('click', () => {
           console.log(numOfResults);
-          // hide the current image
+          // HIDE CURRENT IMAGE
           $currentResult.eq(currentResultIndex).hide();
-          // increment the currentImgIndex
+          // INCREMENT THE currentResultIndex
           if(currentResultIndex < numOfResults) {
             currentResultIndex++;
           } else {
             currentResultIndex = 0;
           }
-          // show the next image
+          // SHOW NEXT IMAGE
           $currentResult.eq(currentResultIndex).show();
 
-        // previous button
+        // PREVIOUS BUTTON
         $('.previous').on('click', () => {
-            console.log('previousbuttonclicked');
-            // hide the current image
-            $('#results').children().eq(currentResultIndex).hide();
-            // decrement the currentImgIndex
-            if(currentResultIndex > 0) {
+          console.log('previousbuttonclicked');
+          // HIDE CURRENT IMAGE
+          $('#results').children().eq(currentResultIndex).hide();
+          // DECREMENT THE currentResultIndex
+          if(currentResultIndex > 0) {
               currentResultIndex--;
-            } else {
-              currentResultIndex = numOfResults;
-            }
-            // show the previous image
-            $('#results').children().eq(currentResultIndex).show();
+          } else {
+            currentResultIndex = numOfResults;
+          }
+          // SHOW PREVIOUS IMAGE
+          $('#results').children().eq(currentResultIndex).show();
         })
         })
       },
@@ -90,7 +75,6 @@ $(() => {
 
 
 // Form for ingredient entry and submit button needed <-- DONE
-// When ingredients are entered a carousel should pop up with the recipes <-- Partly done
+// When ingredients are entered a carousel should pop up with the recipes <-- DONE
 
-// Design needs to be responsive
-// Note: Phone and tablet designs will need a different main font
+// Design needs to be responsive <-- PARTLY DONE
