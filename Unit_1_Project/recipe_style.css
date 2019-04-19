@@ -11,6 +11,10 @@ body {
   background-repeat: no-repeat;
   padding-top: 50%;
 }
+
+.form {
+  padding-bottom: 20px;
+}
 .container {
   align-items: center;
   display: none;
@@ -34,35 +38,37 @@ body {
   width: 70%;
   display: flex;
   flex-direction: column;
+  align-self: center;
   background: rgba(255, 255, 255, 0.70);
   box-shadow: 2px 2px 5px black;
-  border-radius: 20px;
+  border-radius: 10px;
   justify-content: center;
 }
 .carousel-container > h2, a {
+  display: flex;
+  flex-direction: column;
   font-family: 'Montserrat', impact;
   color: black;
   text-align: center;
   text-decoration-style: none;
   text-decoration: none;
   cursor: pointer;
-  padding-left: 25px;
-  padding-right: 25px;
   justify-content: center;
 }
-.carousel-container > img {
-  display: flex;
-  align-items: center;
-  padding-top: 25px;
-}
+
 #results > div {
+  display: flex;
+  flex-direction: column;
   padding-top: 25px;
   width: 100%;
   border-radius: 10px;
   display: none;
   align-items: center;
+  text-align: center;
 }
 #results > div:first-of-type {
+  display: flex;
+  flex-direction: column;
   padding-top: 25px;
   display: block;
   align-items: 50%center;
@@ -71,6 +77,8 @@ body {
   align-self: center;
   background: white;
   color: #888;
+  margin-top: 15px;
+  margin-bottom: 15px;
   padding: 5px;
   padding-right: 15px;
   padding-left: 15px;
@@ -79,6 +87,8 @@ body {
   box-shadow: 1px 1px 3px black;
 }
 .carousel-button:hover {
+  margin-top: 20px;
+  margin-bottom: 20px;
   cursor: pointer;
   background: black;
   color: white;
