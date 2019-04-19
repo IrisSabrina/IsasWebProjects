@@ -18,4 +18,4 @@ The first thing I did was to decide what type of API interested me. I like to co
 I needed quite a bit of help with the JavaScript and JQuery (shout out to Christian!), but once that was done I had a much easier time getting through the CSS styling.
 
 Unsolved Issue
-I was unable to center the carousel. No matter what I tried, it stuck stubbornly to the left of the page. I'm sure I missed something in the styling, but I'm not sure exactly what that was.
+I was unable to center the carousel. No matter what I tried, it stuck stubbornly to the left of the page. I'm sure I missed something in the styling, but I'm not sure exactly what that was. I also could not remember for the life of me how to change the text color for different links without overriding the original designations. So the links in my carousel are not colored the way I wanted them to be.
