@@ -6,7 +6,7 @@ $(() => {
 
   // API CALL
   $.ajax({
-    url: 'http://www.recipepuppy.com/api/?i=' + userInput,
+    url: 'http://cors.io/?http://www.recipepuppy.com/api/?i=' + userInput,
     dataType: "jsonp",
     jsonpCallback: "logResults",
     // success: (data) => {
