@@ -1,0 +1,21 @@
+Recipe on the Spot App
+Recipe App for GA Unit 1 Project
+
+Link to my project: https://irissabrina.github.io/SEIR-Unit-Projects/Unit_1_Project/recipe_index.html?
+
+Description
+Recipe on the Spot is a simple recipe search application that allows you to search for recipes by naming an ingredient you have on hand. A user has the option to scroll through ten recipes that are provided upon the ingredient search submission.
+
+Using the Recipe on the Spot App
+A user has simply to enter an ingredient into the form. Upon submission a carousel will appear and populate with ten recipes for them to scroll through. Each segment contains a photo of the recipe along the recipe title which also functions as a direct link to that recipe.
+
+Technologies Used
+Recipe on the Spot was built using HTML, CSS, Javascript and jQuery. The app uses AJAX to make a request to the Recipe Puppy API.
+
+Approach
+The first thing I did was to decide what type of API interested me. I like to cook, but due to time constraints I usually have an odd variety of ingredients on hand. So something where I could search by a single main ingredient appealed to me. My wireframe was sketched by hand. Originally, I thought to include a modal, but decided that a carousel would work best to display the data I was after. My next move was to create the AJAX API request and add only the info I wanted to see most which was the recipe image along with the title/link to the recipe. 
+
+I needed quite a bit of help with the JavaScript and JQuery (shout out to Christian!), but once that was done I had a much easier time getting through the CSS styling.
+
+Unsolved Issue
+I was unable to center the carousel. No matter what I tried, it stuck stubbornly to the left of the page. I'm sure I missed something in the styling, but I'm not sure exactly what that was. I also could not remember for the life of me how to change the text color for different links without overriding the original designations. So the links in my carousel are not colored the way I wanted them to be.
